@@ -13,8 +13,8 @@ if [ "$2" ]; then
 fi
 
 if [ "$3" ]; then
-   CORRUPT="$3"
-   echo "CORRUPT : $LOSS"
+   CORRUPT="$3%"
+   echo "CORRUPT : $CORRUPT"
 fi
 
 do_start() {
@@ -58,7 +58,7 @@ case "$1" in
   do_status
    ;;
  *)
-   echo "Usage : simulatelag.sh start|stop [ \$CORRUPT [ \$LOSS ] ]"
+   echo "Usage : simulatelag.sh start|stop [ \$LOSS \$CORRUPT ]"
    echo " LOSS in %"
    echo " CORRUPT in %"
    ;;
