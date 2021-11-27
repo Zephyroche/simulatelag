@@ -1,5 +1,5 @@
 ## **Usage**
-You need edit parameters at the start of the script to specify the network interface and IP address
+You need edit parameters at the start of the script to specify the network interface and IP address. <br /> IP and interface name should be without ""
 ```
 IF="eth" #Your interface name
 DST_CIDR="ip" #Address to apply lag on
