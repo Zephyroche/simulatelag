@@ -2,7 +2,7 @@
 
 TC=/sbin/tc #Default path to tc
 IF=eth #Interface name
-DST_CIDR=ip #Address to apply lag on
+DEST=ip #Address to apply lag on
 
 LOSS="0%" #Default loss value
 CORRUPT="0%" #Default corrupt value
@@ -24,7 +24,7 @@ modprobe sch_netem
 for ETH in $IF; do
 $TC qdisc add dev $ETH root handle 1: prio
 $TC qdisc add dev $ETH parent 1:3 netem loss $LOSS corrupt $CORRUPT
-$TC filter add dev $ETH protocol ip parent 1:0 prio 3 u32 match ip dst $DST_CIDR flowid 1:3
+$TC filter add dev $ETH protocol ip parent 1:0 prio 3 u32 match ip dst $DEST flowid 1:3
 done;
 
 }
