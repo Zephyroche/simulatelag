@@ -4,12 +4,13 @@ You need edit parameters at the start of the script to specify the network inter
 IF="eth" #Your interface name
 DST_CIDR="ip" #Address to apply lag on
 ```
-Then, you need to run as root something like
+Then, you need to run as root something like this
 ```
-simulatelag.sh start 15
+simulatelag.sh start 15 5
 ```
 And get this message
 ```
  LOSS : 15%
+ CORRUPT : 5%
 ```
-This will simulate loss 15% for all packets going to ***DST_CIDR*** via ***IF*** 
+This will simulate loss 15% and corrupt 5% for all packets going to ***DST_CIDR*** via ***IF*** 
